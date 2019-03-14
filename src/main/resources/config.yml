@@ -15,8 +15,16 @@
 # |————        Configuration       ————| #
 # +————————————————————————————————————+ #
 
-# Enter list of commands executed by console when a player enter /commandexecutor or his alias; without backslash '/'
+# List of commands executed by console when a player enter /ce <command> (or his aliases); without backslash '/'
+# Every commands can be renammed by aliases
 # %player% = player name
-command: 
+commands: 
+  command1:
   - 'kill %player%'
   - 'say I just killed %player%!'
+  command2:
+  - 'say %player% said hello!'
+
+no-perm: '&cYou don''t have permission.'
+unknown-command: '&cUnknown command. Type "/help" for help.'
+sendConsoleMessage: true
