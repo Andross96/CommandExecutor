@@ -1,0 +1,22 @@
+##########################################################
+# +————————————————————————————————————————————————————+ #
+# |—————————  COMMANDEXECUTOR CONFIGURATION  ——————————| #
+# |——————————————————       v1       ——————————————————| #
+# +————————————————————————————————————————————————————+ #
+# |         For any bug/questions/suggestions:         | #
+# |               visit the main thread.               | #
+# +————————————————————————————————————————————————————+ #
+##########################################################
+# Permissions list:
+#  - commandexecutor.access : give access to the command
+
+
+# +————————————————————————————————————+ #
+# |————        Configuration       ————| #
+# +————————————————————————————————————+ #
+
+# Enter list of commands executed by console when a player enter /commandexecutor or his alias; without backslash '/'
+# %player% = player name
+command: 
+  - 'kill %player%'
+  - 'say I just killed %player%!'

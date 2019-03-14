@@ -1,0 +1,14 @@
+name: CommandExecutor
+main: fr.commandexecutor.CommandExecutor
+version: 1
+author: _Andross
+description: Add easily aliases for commands
+commands:
+  commandexecutor:
+    commandexecutor: Main command for the plugin. Display help.
+    usage: /<command>
+    aliases: [ce]
+premissions:
+  commandexecutor.access:
+    default: true
+    description: give access to the command
