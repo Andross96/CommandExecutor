@@ -1,1 +1,6 @@
+v1.1:
+  - Updated code: now unlimited aliases are possible via config.yml & commands.yml
+  - Added 'no-perm' and 'unknown-command' messages configurable in config.yml
+  - Added 'sendConsoleMessage': show in console when a player use the command
+--------------------------------------------
 v1: Initial release
