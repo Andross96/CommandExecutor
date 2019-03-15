@@ -1,3 +1,8 @@
+v1.2:
+  - Added new configurable '%sendMessage%': send a configurable message to the player who executed the command
+  - Added new configurable '%permission%': the player can't execute the command if it doesn't have a configurable permission
+  - Added reload command: reload the config.yml (need permission commandexecutor.reload)
+--------------------------------------------
 v1.1:
   - Updated code: now unlimited aliases are possible via config.yml & commands.yml
   - Added 'no-perm' and 'unknown-command' messages configurable in config.yml

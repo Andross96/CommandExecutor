@@ -1,14 +1,15 @@
 ##########################################################
 # +————————————————————————————————————————————————————+ #
 # |—————————  COMMANDEXECUTOR CONFIGURATION  ——————————| #
-# |——————————————————       v1       ——————————————————| #
+# |——————————————————      v1.2      ——————————————————| #
 # +————————————————————————————————————————————————————+ #
 # |         For any bug/questions/suggestions:         | #
 # |               visit the main thread.               | #
 # +————————————————————————————————————————————————————+ #
 ##########################################################
 # Permissions list:
-#  - commandexecutor.access : give access to the command
+#  - commandexecutor.access : give access to the command (by default for everyone)
+#  - commandexecutor.reload : give acces to the reload command (by default only for op)
 
 
 # +————————————————————————————————————+ #
@@ -18,13 +19,22 @@
 # List of commands executed by console when a player enter /ce <command> (or his aliases); without backslash '/'
 # Every commands can be renammed by aliases
 # %player% = player name
+# %sendMessage% = send message to the player (the command must start with %sendMessage%)
+# %permission% = need the permission to execute the command
 commands: 
   command1:
+  - '%permission%mycoolcommand.command1'
   - 'kill %player%'
   - 'say I just killed %player%!'
   command2:
   - 'say %player% said hello!'
+  - '%sendMessage%&7You have said hello to everybody!'
 
+# Message for no-permission:
 no-perm: '&cYou don''t have permission.'
+
+# Message for unknown command:
 unknown-command: '&cUnknown command. Type "/help" for help.'
+
+# Show in console when a player used /commandexecutor
 sendConsoleMessage: true

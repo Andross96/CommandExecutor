@@ -30,6 +30,15 @@ public class CommandExecutor extends JavaPlugin {
         	
 	    	// Checking if player used valid arg
 	    	if(args.length == 0 || args[0].isEmpty()) throw new OperationNotSupportedException();
+	    	
+	    	// If /ce reload is used
+	    	if(args[0].equals("reload")) {
+	    		if(!sender.hasPermission("commandexecutor.reload")) throw new NoPermissionException();
+	    		saveDefaultConfig();
+	    		reloadConfig();
+	    		sender.sendMessage(colorize("&3&l[&e&lCommandExecutor&3&l] &2Reloaded."));
+	    		return true;
+	    	}
 	
 	    	// Send in console info about command used
 	    	if(getConfig().getBoolean("sendConsoleMessage")) getLogger().info("Player " + sender.getName() + " used: " + args[0]);
@@ -50,17 +59,33 @@ public class CommandExecutor extends JavaPlugin {
 				public void run() {
 	    			if(!CommandExecutor.pl.isEnabled()) return;
 	    			for(String cmd : list) {
+	    				if(cmd.startsWith("%sendMessage%")) {
+	    					if(sender != null) sender.sendMessage(colorize(cmd.replace("%sendMessage%", "")));
+	    					continue;
+	    				}
+	    				if(cmd.startsWith("%permission%")) {
+	    					if(sender == null) break;
+    						if(!sender.hasPermission(cmd.replace("%permission%", ""))) {
+    							sender.sendMessage(colorize(getConfig().getString("no-perm")));
+    							break;
+	    					}
+	    					continue;
+	    				}
 	    	    		Bukkit.dispatchCommand(console, cmd.replace("%player%", playerName));
 	    	    	}
 	    		}
 	    	});
     	} catch (NoPermissionException e) {
-    		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("no-perm")));
+    		sender.sendMessage(colorize(getConfig().getString("no-perm")));
     	} catch (OperationNotSupportedException e) {
-    		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("unknown-command")));
+    		sender.sendMessage(colorize(getConfig().getString("unknown-command")));
     	}
     	
     	return true;
+    }
+    
+    private String colorize(String message) {
+    	return ChatColor.translateAlternateColorCodes('&', message);
     }
 }
     

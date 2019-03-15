@@ -1,6 +1,6 @@
 name: CommandExecutor
 main: fr.commandexecutor.CommandExecutor
-version: 1.1
+version: 1.2
 author: _Andross
 description: Add easily aliases for commands
 commands:
@@ -12,3 +12,5 @@ premissions:
   commandexecutor.access:
     default: true
     description: give access to the command
+  commandexecutor.reload:
+    description: give access to the reload command
