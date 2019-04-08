@@ -31,6 +31,10 @@
 # %say%MyMessage = the player will say MyMessage in chat
 # %argX% = argument number X (X < 0)
 # %argAllX%: to get all arguments in a single argument, except the first X ones (for example: creating a message with arguments)
+#
+# Quick tutorial to create a command: https://github.com/Andross96/CommandExecutor/wiki/Create-a-new-command
+# Quick tutorial to replace an existing command: https://github.com/Andross96/CommandExecutor/wiki/Recode-an-existant-command
+# More config.yml informations: https://github.com/Andross96/CommandExecutor/wiki/Configuration-file
 commands: 
   welcome:
   - '%executor:player%'
