@@ -1,7 +1,7 @@
 ##########################################################
 # +————————————————————————————————————————————————————+ #
 # |—————————  COMMANDEXECUTOR CONFIGURATION  ——————————| #
-# |——————————————————      v1.2      ——————————————————| #
+# |——————————————————      v1.3      ——————————————————| #
 # +————————————————————————————————————————————————————+ #
 # |         For any bug/questions/suggestions:         | #
 # |               visit the main thread.               | #
@@ -11,24 +11,37 @@
 #  - commandexecutor.access : give access to the command (by default for everyone)
 #  - commandexecutor.reload : give acces to the reload command (by default only for op)
 
-
 # +————————————————————————————————————+ #
 # |————        Configuration       ————| #
 # +————————————————————————————————————+ #
-
 # List of commands executed by console when a player enter /ce <command> (or his aliases); without backslash '/'
-# Every commands can be renammed by aliases
+# Every commands can be renamed by aliases. 
+# Differents variables can be used: (options, if wanted, must be writted first; and after, you can use the utilities)
+# Variables:
 # %player% = player name
-# %sendMessage% = send message to the player (the command must start with %sendMessage%)
-# %permission% = need the permission to execute the command
+#
+# Command options: (have to be writted first, in the command list)
+# %executor:player%: command will only be executed by the player (if not entered, command will be executed by default by console)
+# %permission%mycommand.mypermission = need the permission to execute the command
+# %usage%[MyCommand] &2Usage: /mycommand <arg1> = to show the command usage, if not used well.
+#
+# Utilities:
+# %sendMessage%MyMessage = send message to the player
+# %broadcast%MyMessage = send message to all online players
+# %say%MyMessage = the player will say MyMessage in chat
+# %argX% = argument number X (X < 0)
+# %argAllX%: to get all arguments in a single argument, except the first X ones (for example: creating a message with arguments)
 commands: 
-  command1:
-  - '%permission%mycoolcommand.command1'
-  - 'kill %player%'
-  - 'say I just killed %player%!'
-  command2:
-  - 'say %player% said hello!'
-  - '%sendMessage%&7You have said hello to everybody!'
+  welcome:
+  - '%executor:player%'
+  - '%say%&l&aHello, welcome to our server!'
+  - '%say%&aThis is a simple survival server. Use /kit info to get a book!'
+  - '%say%&2You can visit our website for more informations.'
+  kick:
+  - '%permission%mycoolcommand.kick'
+  - '%usage%[MyKick] &2Usage: /kick <player> <reason>'
+  - 'minecraft:kick %arg1% %argAll1%'
+  - '%broadcast%&2%player% just kicked %arg1% for %argAll1%.'
 
 # Message for no-permission:
 no-perm: '&cYou don''t have permission.'

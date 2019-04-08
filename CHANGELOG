@@ -1,3 +1,12 @@
+v1.3:
+  - Added support of arguments in commands
+  - Added new configurable option '%executor:player%': command will only be executed by the player (if not entered, command will be executed by default by console)
+  - Added new configurable option '%usage%MyMessage': to show the command usage, if not used well.
+  - Added new configurable utilities:
+    - '%broadcast%MyMessage': send message to all online players
+    - '%say%MyMessage': the player will say MyMessage in chat
+    - '%argX%': get argument number X
+    - '%argAllX%': to get all arguments in a single argument, except the first X ones (for example: creating a message with arguments)
 v1.2:
   - Added new configurable '%sendMessage%': send a configurable message to the player who executed the command
   - Added new configurable '%permission%': the player can't execute the command if it doesn't have a configurable permission
