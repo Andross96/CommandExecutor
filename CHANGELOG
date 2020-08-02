@@ -1,3 +1,7 @@
+v1.4:
+  - Caching regex
+  - Code cleanup
+--------------------------------------------
 v1.3:
   - Added support of arguments in commands
   - Added new configurable option '%executor:player%': command will only be executed by the player (if not entered, command will be executed by default by console)

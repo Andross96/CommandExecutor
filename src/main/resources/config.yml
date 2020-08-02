@@ -1,7 +1,7 @@
 ##########################################################
 # +————————————————————————————————————————————————————+ #
 # |—————————  COMMANDEXECUTOR CONFIGURATION  ——————————| #
-# |——————————————————      v1.3      ——————————————————| #
+# |——————————————————      v1.4      ——————————————————| #
 # +————————————————————————————————————————————————————+ #
 # |         For any bug/questions/suggestions:         | #
 # |               visit the main thread.               | #
@@ -15,7 +15,7 @@
 # |————        Configuration       ————| #
 # +————————————————————————————————————+ #
 # List of commands executed by console when a player enter /ce <command> (or his aliases); without backslash '/'
-# Every commands can be renamed by aliases. 
+# Every commands can be renamed by aliases.
 # Differents variables can be used: (options, if wanted, must be writted first; and after, you can use the utilities)
 # Variables:
 # %player% = player name
@@ -35,17 +35,17 @@
 # Quick tutorial to create a command: https://github.com/Andross96/CommandExecutor/wiki/Create-a-new-command
 # Quick tutorial to replace an existing command: https://github.com/Andross96/CommandExecutor/wiki/Recode-an-existant-command
 # More config.yml informations: https://github.com/Andross96/CommandExecutor/wiki/Configuration-file
-commands: 
+commands:
   welcome:
-  - '%executor:player%'
-  - '%say%&l&aHello, welcome to our server!'
-  - '%say%&aThis is a simple survival server. Use /kit info to get a book!'
-  - '%say%&2You can visit our website for more informations.'
+    - '%executor:player%'
+    - '%say%&l&aHello, welcome to our server!'
+    - '%say%&aThis is a simple survival server. Use /kit info to get a book!'
+    - '%say%&2You can visit our website for more informations.'
   kick:
-  - '%permission%mycoolcommand.kick'
-  - '%usage%[MyKick] &2Usage: /kick <player> <reason>'
-  - 'minecraft:kick %arg1% %argAll1%'
-  - '%broadcast%&2%player% just kicked %arg1% for %argAll1%.'
+    - '%permission%mycoolcommand.kick'
+    - '%usage%[MyKick] &2Usage: /kick <player> <reason>'
+    - 'minecraft:kick %arg1% %argAll1%'
+    - '%broadcast%&2%player% just kicked %arg1% for %argAll1%.'
 
 # Message for no-permission:
 no-perm: '&cYou don''t have permission.'

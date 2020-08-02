@@ -1,12 +1,12 @@
 name: CommandExecutor
-main: fr.commandexecutor.CommandExecutor
-version: 1.3
+main: fr.andross.commandexecutor.CommandExecutor
+version: '1.4'
+api-version: '1.13'
 author: _Andross
 description: Add easily aliases for commands
 commands:
   commandexecutor:
     commandexecutor: Main command for the plugin. Display help.
-    usage: /<command>
     aliases: [ce]
 premissions:
   commandexecutor.access:
